@@ -13,11 +13,9 @@ public class Main {
         System.out.print("\n\n\tEnter the number of terms : ");
         var iter = Integer.parseInt(br.readLine());
 
-        for (int i = 1; i < iter; i++) {
-            fact *= i;
-            term = Math.pow(start, i) / fact;
-            sum += term;
-        }
+        var ts = new TailorSeries();
+        sum = ts.getTailorSeries(fact, sum, start, iter);
         System.out.print("\n\n\tanswer = " + sum);
     }
+
 }
